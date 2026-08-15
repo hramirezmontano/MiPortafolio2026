@@ -15,17 +15,17 @@ public class ExperienciaDAO {
         String sql = "SELECT * FROM experiencias ORDER BY orden ASC";
 
         try (Connection conn = Conexion.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                Experiencia exp = new Experiencia(
-                    rs.getInt("id"),
-                    rs.getString("cargo"),
-                    rs.getString("empresa"),
-                    rs.getString("periodo"),
-                    rs.getString("descripcion")
-                );
+                Experiencia exp = new Experiencia();
+                exp.setId(rs.getInt("id"));
+                exp.setCargo(rs.getString("cargo"));
+                exp.setEmpresa(rs.getString("empresa"));
+                exp.setPeriodo(rs.getString("periodo"));
+                exp.setDescripcion(rs.getString("descripcion"));
+
                 lista.add(exp);
             }
         } catch (Exception e) {
