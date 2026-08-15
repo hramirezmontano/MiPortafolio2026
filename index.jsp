@@ -1,18 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="com.portafolio.dao.ExperienciaDAO" %>
-<%@ page import="com.portafolio.dao.ProyectoDAO" %>
-<%@ page import="com.portafolio.model.Experiencia" %>
-<%@ page import="com.portafolio.model.Proyecto" %>
-<%@ page import="java.util.List" %>
-
-<% 
-    ExperienciaDAO expDAO = new ExperienciaDAO(); 
-    List<Experiencia> listaExperiencias = expDAO.obtenerTodas();
-
-    ProyectoDAO proyDAO = new ProyectoDAO();
-    List<Proyecto> listaProyectos = proyDAO.obtenerTodos();
-%>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -236,36 +222,40 @@
     <section id="Proyectos" class="services section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Proyectos Destacados</h2>
-        <p>Selección de soluciones informáticas, sistemas corporativos y aplicaciones web cargadas desde la base de datos.</p>
+        <p>Selección de soluciones informáticas, sistemas corporativos y aplicaciones web desarrolladas a lo largo de mi trayectoria.</p>
       </div>
 
       <div class="container">
         <div class="row gy-4">
-          <% 
-            if (listaProyectos != null && !listaProyectos.isEmpty()) {
-              for (Proyecto proy : listaProyectos) {
-          %>
-              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-item position-relative">
-                  <div class="icon">
-                    <i class="bi bi-diagram-3"></i>
-                  </div>
-                  <a href="#" class="stretched-link">
-                    <h3><%= proy.getNombre() %></h3>
-                  </a>
-                  <p><%= proy.getDescripcion() %></p>
-                </div>
-              </div>
-          <% 
-              }
-            } else { 
-          %>
-              <div class="col-12 text-center">
-                <p>No se encontraron proyectos registrados en la base de datos.</p>
-              </div>
-          <% 
-            } 
-          %>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-diagram-3"></i></div>
+              <a href="#" class="stretched-link">
+                <h3>Sistema de Canales no Presenciales</h3>
+              </a>
+              <p>Desarrollo e integración de módulos de atención y consulta para plataformas bancarias (Banco Estado).</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-database-check"></i></div>
+              <a href="#" class="stretched-link">
+                <h3>Plataforma de Gestión Corporativa</h3>
+              </a>
+              <p>Implementación y mantenimiento evolutivo de software a medida para automatización de procesos internos.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-code-slash"></i></div>
+              <a href="#" class="stretched-link">
+                <h3>Aplicación Web Dinámica (JSP / Servlet)</h3>
+              </a>
+              <p>Desarrollo de interfaz de usuario responsiva conectada con arquitecturas backend robustas.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -318,33 +308,21 @@
       </div>
     </section>
 
-    <!-- Experiencia Dinámica Section -->
+    <!-- Experiencia Section -->
     <section id="Experiencias" class="resume section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Experiencia Laboral</h2>
-        <p>Trayectoria profesional destacada registrada en la base de datos.</p>
+        <p>Trayectoria profesional destacada en desarrollo de software e infraestructura TI.</p>
       </div>
 
       <div class="container">
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <% 
-              if (listaExperiencias != null && !listaExperiencias.isEmpty()) {
-                for (Experiencia exp : listaExperiencias) {
-            %> 
-                <div class="resume-item border-start border-3 border-primary ps-4 pb-4 position-relative">
-                  <h3 class="fw-bold fs-4 text-dark mb-1"><%= exp.getCargo() %></h3>
-                  <h4 class="fs-6 text-muted mb-2"><%= exp.getEmpresa() %> | <%= exp.getPeriodo() %></h4>
-                  <div><%= exp.getDescripcion() %></div>
-                </div>
-            <% 
-                } 
-              } else { 
-            %>
-                <p class="text-center">No se encontraron experiencias registradas en la base de datos.</p>
-            <% 
-              } 
-            %>
+            <div class="resume-item border-start border-3 border-primary ps-4 pb-4 position-relative">
+              <h3 class="fw-bold fs-4 text-dark mb-1">Analista Programador</h3>
+              <h4 class="fs-6 text-muted mb-2">Banco Estado | 2021 - Presente</h4>
+              <div>Desarrollo y mantención de aplicaciones utilizadas por el departamento de Canales.</div>
+            </div>
           </div>
         </div>
       </div>
