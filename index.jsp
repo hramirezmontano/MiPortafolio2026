@@ -5,15 +5,25 @@
         <%@ page import="com.portafolio.model.Proyecto" %>
           <%@ page import="java.util.List" %>
 
-            <% ExperienciaDAO expDAO=new ExperienciaDAO(); List<Experiencia> listaExperiencias = expDAO.obtenerTodas();
+
+          
+
+            <% 
+              ExperienciaDAO expDAO = new ExperienciaDAO();
+              List<Experiencia> listaExperiencias = expDAO.obtenerTodas();
+              request.setAttribute("experiencias", listaExperiencias);
 
               ProyectoDAO proyDAO = new ProyectoDAO();
               List<Proyecto> listaProyectos = proyDAO.obtenerTodos();
-                %>
+              request.setAttribute("proyectos", listaProyectos);            
+            %>
 
-                <! git add . >
-                <! git commit -m "Descripción clara de lo que modificaste">  
-                <! git push >
+                <%--
+                   git add . 
+                 git commit -m "Descripción clara de lo que modificaste"
+                 git push 
+                 
+                 --%>
 
 
                 <!DOCTYPE html>
