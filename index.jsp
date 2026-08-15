@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.util.List" %>
+<%@ page import="cl.miportafolio.dao.ExperienciaDAO" %>
+<%@ page import="cl.miportafolio.model.Experiencia" %>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -15,7 +18,7 @@
   <!-- Fuentes -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -84,51 +87,19 @@
 
               <div class="progress">
                 <span class="skill"><span>HTML</span> <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
               </div>
-
               <div class="progress">
                 <span class="skill"><span>CSS</span> <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
               </div>
-
               <div class="progress">
                 <span class="skill"><span>JavaScript</span> <i class="val">60%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div></div>
               </div>
-
-              <div class="progress">
-                <span class="skill"><span>Python</span> <i class="val">60%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill"><span>VB.Net</span> <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
               <div class="progress">
                 <span class="skill"><span>Sql Server</span> <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-
-              <div class="progress">
-                <span class="skill"><span>AWS</span> <i class="val">50%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <div class="progress-bar-wrap"><div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
               </div>
             </div>
           </div>
@@ -139,15 +110,6 @@
               <p>
                 Como Analista-Programador con más de 10 años de experiencia, poseo una sólida base en el desarrollo de software de ciclo completo.
                 He liderado equipos en la arquitectura de soluciones escalables, optimizando procesos y garantizando la calidad del código.
-                Mi enfoque está en crear sistemas robustos y eficientes.
-              </p>
-              <p>
-                En el desarrollo frontend, me especializo en crear interfaces de usuario intuitivas y responsivas utilizando tecnologías de vanguardia.
-                Mi dominio de HTML y CSS es total, y tengo una sólida comprensión de JavaScript para añadir interactividad y lógica del cliente.
-              </p>
-              <p>
-                En el backend, cuento con una vasta experiencia en Python y VB.NET, diseñando APIs sólidas y gestionando bases de datos complejas.
-                Mi pasión es resolver desafíos técnicos complejos y mantenerme al día con las últimas tendencias tecnológicas para ofrecer soluciones innovadoras.
               </p>
             </div>
           </div>
@@ -155,160 +117,7 @@
       </div>
     </section>
 
-    <!-- Resumen / CV Section -->
-    <section id="resume" class="resume section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Curriculum Vitae</h2>
-        <p>Trayectoria profesional y formación académica en desarrollo de sistemas.</p>
-      </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Resumen</h3>
-            <div class="resume-item pb-0">
-              <h4>Hugo Ramirez Montano</h4>
-              <p><em>Analista-Programador orientado a resultados, con amplia experiencia en desarrollo full-stack, optimización de código y gestión de bases de datos.</em></p>
-              <ul>
-                <li>Santiago, Chile</li>
-                <li>+56 9 86223662</li>
-                <li>hramirezmontano@vtr.net</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Educación</h3>
-            <div class="resume-item">
-              <h4>ANALISTA PROGRAMADOR</h4>
-              <h5>1994 - 1997</h5>
-              <p><em>Instituto Itesa, Santiago, Chile</em></p>
-              <p>Formación especializada en lógica de programación, desarrollo web, bases de datos y arquitectura de software.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Experiencia Laboral</h3>
-            <div class="resume-item">
-              <h4>ANALISTA PROGRAMADOR</h4>
-              <h5>2007 - 2013</h5>
-              <p><em>Soluservicios, Santiago, Chile</em></p>
-              <ul>
-                <li>Desarrollo de aplicaciones computacionales para el departamento de Canales no Presenciales (Banco Estado).</li>
-              </ul>
-
-              <h5>2013 - 2014</h5>
-              <p><em>Servibanca, Santiago, Chile</em></p>
-              <ul>
-                <li>Desarrollo y mantención de aplicaciones utilizadas por el departamento de Canales no Presenciales (Banco Estado).</li>
-              </ul>
-
-              <h5>2014 - 2020</h5>
-              <p><em>Servicios Terrestres Sur Austral, Santiago, Chile</em></p>
-              <ul>
-                <li>Desarrollo y mantención de aplicaciones utilizadas por la Empresa, luego pasé a Jefe de Informática.</li>
-              </ul>
-
-              <h5>2021 - Presente</h5>
-              <p><em>Banco Estado, Santiago, Chile</em></p>
-              <ul>
-                <li>Desarrollo y mantención de aplicaciones utilizadas por el departamento de Canales en Banco Estado.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Proyectos Section -->
-    <section id="Proyectos" class="services section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Proyectos Destacados</h2>
-        <p>Selección de soluciones informáticas, sistemas corporativos y aplicaciones web desarrolladas a lo largo de mi trayectoria.</p>
-      </div>
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-diagram-3"></i></div>
-              <a href="#" class="stretched-link">
-                <h3>Sistema de Canales no Presenciales</h3>
-              </a>
-              <p>Desarrollo e integración de módulos de atención y consulta para plataformas bancarias (Banco Estado).</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-database-check"></i></div>
-              <a href="#" class="stretched-link">
-                <h3>Plataforma de Gestión Corporativa</h3>
-              </a>
-              <p>Implementación y mantenimiento evolutivo de software a medida para automatización de procesos internos.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-code-slash"></i></div>
-              <a href="#" class="stretched-link">
-                <h3>Aplicación Web Dinámica (JSP / Servlet)</h3>
-              </a>
-              <p>Desarrollo de interfaz de usuario responsiva conectada con arquitecturas backend robustas.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section accent-background">
-      <img src="assets/img/stats-bg_hrm.jpg" alt="Estadísticas" data-aos="fade-in">
-      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4">
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <div class="d-flex justify-content-center align-items-center">
-                <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1" class="purecounter">5</span>
-                <span class="fs-3 fw-bold">+</span>
-              </div>
-              <p>Clientes / Empresas</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <div class="d-flex justify-content-center align-items-center">
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter">15</span>
-                <span class="fs-3 fw-bold">+</span>
-              </div>
-              <p>Proyectos Desarrollados</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <div class="d-flex justify-content-center align-items-center">
-                <span data-purecounter-start="0" data-purecounter-end="8000" data-purecounter-duration="1" class="purecounter">8000</span>
-                <span class="fs-3 fw-bold">+</span>
-              </div>
-              <p>Horas de Soporte y Desarrollo</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <div class="d-flex justify-content-center align-items-center">
-                <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter">100</span>
-                <span class="fs-3 fw-bold">%</span>
-              </div>
-              <p>Compromiso & Logros</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experiencia Section -->
+    <!-- Experiencias Section (DINÁMICO DESDE BASE DE DATOS) -->
     <section id="Experiencias" class="resume section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Experiencia Laboral</h2>
@@ -318,11 +127,32 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="resume-item border-start border-3 border-primary ps-4 pb-4 position-relative">
-              <h3 class="fw-bold fs-4 text-dark mb-1">Analista Programador</h3>
-              <h4 class="fs-6 text-muted mb-2">Banco Estado | 2021 - Presente</h4>
-              <div>Desarrollo y mantención de aplicaciones utilizadas por el departamento de Canales.</div>
-            </div>
+            <% 
+                try {
+                    ExperienciaDAO expDAO = new ExperienciaDAO(); 
+                    List<Experiencia> listaExperiencias = expDAO.obtenerTodas();
+                    
+                    if (listaExperiencias != null && !listaExperiencias.isEmpty()) {
+                        for (Experiencia exp : listaExperiencias) {
+            %>
+                <div class="resume-item border-start border-3 border-primary ps-4 pb-4 position-relative">
+                  <h3 class="fw-bold fs-4 text-dark mb-1"><%= exp.getCargo() %></h3>
+                  <h4 class="fs-6 text-muted mb-2"><%= exp.getEmpresa() %> | <%= exp.getPeriodo() %></h4>
+                  <div><%= exp.getDescripcion() %></div>
+                </div>
+            <% 
+                        }
+                    } else {
+            %>
+                <p class="text-muted">No se encontraron experiencias registradas en la base de datos.</p>
+            <% 
+                    }
+                } catch (Exception e) {
+            %>
+                <p class="text-danger">Error al consultar la base de datos: <%= e.getMessage() %></p>
+            <% 
+                }
+            %>
           </div>
         </div>
       </div>
@@ -354,41 +184,7 @@
                   <p class="mb-0">hramirezmontano@vtr.net</p>
                 </div>
               </div>
-
-              <div class="info-item d-flex align-items-center">
-                <i class="bi bi-phone flex-shrink-0 fs-3 text-primary me-3"></i>
-                <div>
-                  <h4 class="mb-0 fw-bold">Teléfono</h4>
-                  <p class="mb-0">+56 9 86223662</p>
-                </div>
-              </div>
             </div>
-          </div>
-
-          <div class="col-lg-12 mt-4">
-            <form action="ContactoServlet" method="POST" class="php-email-form">
-              <div class="row gy-4">
-                <div class="col-md-6">
-                  <input type="text" name="nombre" class="form-control" placeholder="Tu Nombre" required>
-                </div>
-
-                <div class="col-md-6">
-                  <input type="email" class="form-control" name="email" placeholder="Tu Email" required>
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="asunto" placeholder="Asunto" required>
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="mensaje" rows="6" placeholder="Mensaje" required></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
       </div>
@@ -402,24 +198,12 @@
     </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
