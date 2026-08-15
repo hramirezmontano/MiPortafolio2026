@@ -8,11 +8,9 @@
 <% 
     ExperienciaDAO expDAO = new ExperienciaDAO(); 
     List<Experiencia> listaExperiencias = expDAO.obtenerTodas();
-    request.setAttribute("experiencias", listaExperiencias);
 
     ProyectoDAO proyDAO = new ProyectoDAO();
     List<Proyecto> listaProyectos = proyDAO.obtenerTodos();
-    request.setAttribute("proyectos", listaProyectos);
 %>
 
 <!DOCTYPE html>
@@ -23,7 +21,6 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Mi Portafolio - Hugo Ramírez Montano</title>
   <meta name="description" content="Portafolio profesional de Hugo Ramírez Montano">
-  <meta name="keywords" content="Portafolio, Desarrollador, Java, JSP, Analista Programador">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -235,7 +232,7 @@
       </div>
     </section>
 
-    <!-- Proyectos Section (Dinámico desde BD) -->
+    <!-- Proyectos Section -->
     <section id="Proyectos" class="services section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Proyectos Destacados</h2>
@@ -245,7 +242,6 @@
       <div class="container">
         <div class="row gy-4">
           <% 
-            listaProyectos = (List<Proyecto>) request.getAttribute("proyectos");
             if (listaProyectos != null && !listaProyectos.isEmpty()) {
               for (Proyecto proy : listaProyectos) {
           %>
@@ -333,7 +329,6 @@
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
             <% 
-              listaExperiencias = (List<Experiencia>) request.getAttribute("experiencias");
               if (listaExperiencias != null && !listaExperiencias.isEmpty()) {
                 for (Experiencia exp : listaExperiencias) {
             %> 
