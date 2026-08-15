@@ -486,26 +486,23 @@
                         <div class="container">
                           <div class="row">
                             <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-                              List<Experiencia> listaExperiencias = (List<Experiencia>)
+
+                              <% List<Experiencia> listaExperiencias = (List<Experiencia>)
                                   request.getAttribute("experiencias");
                                   if (listaExperiencias != null && !listaExperiencias.isEmpty()) {
                                   for (Experiencia exp : listaExperiencias) {
-
-                                  <!-- Experiencia Dinámica desde MySQL -->
+                                  %>
                                   <div
                                     class="resume-item border-start border-3 border-primary ps-4 pb-4 position-relative">
                                     <h3 class="fw-bold fs-4 text-dark mb-1">
                                       <%= exp.getCargo() %>
                                     </h3>
-                                    <span class="badge bg-primary mb-2">
-                                      <%= exp.getPeriodo() %>
-                                    </span>
-                                    <p class="fst-italic text-secondary fw-semibold">
-                                      <%= exp.getEmpresa() %>
-                                    </p>
-                                    <p>
+                                    <h4 class="fs-6 text-muted mb-2">
+                                      <%= exp.getEmpresa() %> | <%= exp.getPeriodo() %>
+                                    </h4>
+                                    <div>
                                       <%= exp.getDescripcion() %>
-                                    </p>
+                                    </div>
                                   </div>
                                   <% } } else { %>
                                     <p>No se encontraron experiencias registradas en la base de datos.</p>
