@@ -128,7 +128,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <% 
+<% 
                 try {
                     cl.miportafolio.dao.ExperienciaDAO expDAO = new cl.miportafolio.dao.ExperienciaDAO(); 
                     java.util.List<cl.miportafolio.model.Experiencia> listaExperiencias = expDAO.obtenerTodas();
