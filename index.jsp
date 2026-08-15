@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.List" %>
+
 <%@ page import="cl.miportafolio.dao.ExperienciaDAO" %>
 <%@ page import="cl.miportafolio.model.Experiencia" %>
 <!DOCTYPE html>
@@ -117,7 +118,7 @@
       </div>
     </section>
 
-    <!-- Experiencias Section (DINÁMICO DESDE BASE DE DATOS) -->
+<!-- Experiencia Section (Dinámica) -->
     <section id="Experiencias" class="resume section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Experiencia Laboral</h2>
@@ -129,11 +130,11 @@
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
             <% 
                 try {
-                    ExperienciaDAO expDAO = new ExperienciaDAO(); 
-                    List<Experiencia> listaExperiencias = expDAO.obtenerTodas();
+                    cl.miportafolio.dao.ExperienciaDAO expDAO = new cl.miportafolio.dao.ExperienciaDAO(); 
+                    java.util.List<cl.miportafolio.model.Experiencia> listaExperiencias = expDAO.obtenerTodas();
                     
                     if (listaExperiencias != null && !listaExperiencias.isEmpty()) {
-                        for (Experiencia exp : listaExperiencias) {
+                        for (cl.miportafolio.model.Experiencia exp : listaExperiencias) {
             %>
                 <div class="resume-item border-start border-3 border-primary ps-4 pb-4 position-relative">
                   <h3 class="fw-bold fs-4 text-dark mb-1"><%= exp.getCargo() %></h3>
@@ -149,7 +150,9 @@
                     }
                 } catch (Exception e) {
             %>
-                <p class="text-danger">Error al consultar la base de datos: <%= e.getMessage() %></p>
+                <div class="alert alert-danger" role="alert">
+                  Error consultando la base de datos: <%= e.getMessage() %>
+                </div>
             <% 
                 }
             %>
