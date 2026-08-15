@@ -6,10 +6,16 @@ import java.sql.SQLException;
 
 public class Conexion {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/portafolio_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
-    private static final String USER = "root";
-    private static final String PASSWORD = "Md834611**"; 
+// PARA VERLO SOLAMENTE LOCAL
+    // private static final String URL = "jdbc:mysql://localhost:3306/portafolio_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+    //private static final String USER = "root";
+    //private static final String PASSWORD = "Md834611**"; 
 
+// PARA VERLO EN LINEA
+    private static final String URL = "jdbc:mysql://mysql-388da886-vtr-06c0.a.aivencloud.com:12236/portafolio_db?useSSL=true&trustServerCertificate=true";
+    private static final String USER = "avnadmin";
+    private static final String PASSWORD = "AVNS_bVLFh5O5UCNR64GG7Yk";    
+    
     public static Connection getConnection() {
         Connection conn = null;
         try {
