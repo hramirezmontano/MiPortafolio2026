@@ -11,9 +11,9 @@
               List<Proyecto> listaProyectos = proyDAO.obtenerTodos();
                 %>
 
-                <!git add .>
-                <!git commit -m "Descripción clara de lo que modificaste">
-                <!git push>
+                <! git add . >
+                <! git commit -m "Descripción clara de lo que modificaste">  
+                <! git push >
 
 
                 <!DOCTYPE html>
